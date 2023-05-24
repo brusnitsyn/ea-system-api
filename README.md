@@ -3,7 +3,7 @@
 Необходимое ПО для установки:
 
 - [OpenServer](https://ospanel.io/download/);
-- [PHP >= 8.1](https://www.php.net/downloads.php) (Можно использовать предустанновленный php из OpenServer);
+- [PHP >= 8.1](https://www.php.net/downloads.php) (Можно использовать предустановленный php из OpenServer);
 - [Composer](https://getcomposer.org/download).
 
 После установки ПО необходимо клонировать/скачать проект с гит.
@@ -29,9 +29,9 @@ php artisan migrate --seed
 
 ### 4. Запуск сервера
 
-В консоле выполнить команду:
-
 > Перед запуском севера, обязательно запустите OpenServer.
+
+В консоле выполнить команду:
 
 ```bash
 php artisan serve
