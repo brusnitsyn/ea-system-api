@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Faculties;
+namespace App\Http\Resources\Corpus;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class FacultiesResource extends JsonResource
+class CorpusResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,6 @@ class FacultiesResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'short' => $this->short,
-            'color' => $this->color,
-        ];
+        return parent::toArray($request);
     }
 }

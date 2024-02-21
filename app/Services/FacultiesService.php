@@ -18,4 +18,14 @@ class FacultiesService
         $faculties = $query->get();
         return FacultiesResource::collection($faculties);
     }
+
+    public function create(array $data)
+    {
+        $data = array_merge($data, array());
+
+        $accessor = Faculty::query()
+            ->create($data);
+
+        return FacultiesResource::make($accessor);
+    }
 }

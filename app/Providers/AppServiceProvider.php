@@ -6,9 +6,11 @@ use App\Services\AccessoriesService;
 use App\Services\AccountService;
 use App\Services\AudiencesService;
 use App\Services\CommentsService;
+use App\Services\CorpusService;
 use App\Services\DepartmentsService;
 use App\Services\EquipmentService;
 use App\Services\FacultiesService;
+use App\Services\TableContentService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -38,5 +40,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('departments.facade', DepartmentsService::class);
         $this->app->bind('equipment.facade', EquipmentService::class);
         $this->app->bind('faculties.facade', FacultiesService::class);
+        $this->app->bind('corpus.facade', CorpusService::class);
+        $this->app->bind('tablecontent.facade', TableContentService::class);
     }
 }

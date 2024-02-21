@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Audience;
+namespace App\Http\Resources\TableContent;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class AudienceResource extends JsonResource
+class BaseContentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,8 @@ class AudienceResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'number' => $this->number,
-            'corpus_id' => $this->when($this->corpus_id, $this->corpus_id)
+            'position' => $this->position,
+            'interval' => $this->interval
         ];
     }
 }

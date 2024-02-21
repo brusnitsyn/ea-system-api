@@ -27,3 +27,5 @@ require __DIR__ . '/groups/users.php';
 require __DIR__ . '/groups/equipments.php';
 require __DIR__ . '/groups/accessories.php';
 require __DIR__ . '/groups/comments.php';
+require __DIR__ . '/groups/corpus.php';
+require __DIR__ . '/groups/tablecontent.php';

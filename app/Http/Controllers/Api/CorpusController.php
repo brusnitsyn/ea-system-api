@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Facades\Faculties;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Faculty\StoreRequest;
+use App\Http\Requests\Corpus\StoreRequest;
+use App\Models\Corpus;
 use Illuminate\Http\Request;
 
-class FacultiesController extends Controller
+class CorpusController extends Controller
 {
     public function all()
     {
-        return Faculties::all();
+        return \App\Facades\Corpus::all();
     }
 
     public function create(StoreRequest $request)

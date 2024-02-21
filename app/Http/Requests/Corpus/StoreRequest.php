@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Account;
+namespace App\Http\Requests\Corpus;
 
-use App\Facades\Account;
+use App\Facades\Accessories;
+use App\Facades\Corpus;
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +25,11 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'login' => ['required', 'string'],
-            'password' => ['required', 'string'],
-            'rule' => [
-                'id' => ['required', 'numeric']
-            ]
         ];
     }
 
-    public function register()
+    public function store()
     {
-        Account::register($this->validated());
+        return Corpus::create($this->validated());
     }
 }

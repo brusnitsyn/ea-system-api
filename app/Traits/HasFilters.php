@@ -28,6 +28,7 @@ trait HasFilters
         }
 
         foreach ($scopes as $column => $value) {
+
             if (method_exists($this, 'scope' . ucfirst($column))) {
                 $query->$column();
             } else {

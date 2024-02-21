@@ -8,17 +8,15 @@ use Illuminate\Support\Facades\Facade;
  * @method static all()
  * @method static get($id)
  * @method static create(array $data)
- * @method static update(array $data)
+ * @method static update($id, array $data)
  * @method static delete($id)
- * @method static getAudienceFeature($id)
- * @method static createAudienceFeature(array $data)
  *
- * @see \App\Services\AudiencesService
+ * @see \App\Services\AccessoriesService
  */
-class Audiences extends Facade
+class Corpus extends Facade
 {
     protected static function getFacadeAccessor() : string
     {
-        return 'audiences.facade';
+        return 'corpus.facade';
     }
 }

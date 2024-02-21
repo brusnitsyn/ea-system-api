@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('audiences', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignId('department_id')->references('id')->on('departments')->cascadeOnDelete();
+            $table->string('number');
+            $table->foreignId('corpus_id')->nullable()->references('id')->on('corpuses')->cascadeOnDelete();
             $table->timestamps();
         });
     }
