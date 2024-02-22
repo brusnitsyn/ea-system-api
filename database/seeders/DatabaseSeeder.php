@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,32 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        /*
-         * Права
-         **/
-        \App\Models\Rule::create([
-            'slug' => 'admin',
-            'title' => 'Администратор'
+        $this->call([
+            BaseTableSeeder::class,
+            BoardSeeder::class,
+            RuleSeeder::class,
+            UserSeeder::class,
         ]);
-//        \App\Models\Rule::create([
-//            'slug' => 'teacher',
-//            'title' => 'Преподаватель'
-//        ]);
-        \App\Models\Rule::create([
-            'slug' => 'worker',
-            'title' => 'Сотрудник'
-        ]);
-
-        /*
-         * Учетные записи
-         **/
-        \App\Models\User::create([
-            'name' => 'Татьяна Исакова',
-            'login' => 'admin',
-            'password' => Hash::make('admin'),
-            'rule_id' => 1
-        ]);
-
         /*
          * Типы оборудования
          **/
@@ -131,43 +110,6 @@ class DatabaseSeeder extends Seeder
 //        \App\Models\Corpus::create([
 //            'name' => 'Корпус А'
 //        ]);
-
-        /*
-         * Данные таблицы поумолчанию
-         **/
-        \App\Models\BaseTableContent::create([
-            'position' => 1,
-            'interval' => '08:00-09:30'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 2,
-            'interval' => '09:40-11:10'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 3,
-            'interval' => '11:20-11:50'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 4,
-            'interval' => '13:00-14:30'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 5,
-            'interval' => '14:40-16:10'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 6,
-            'interval' => '16:20-17:50'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 7,
-            'interval' => '18:00-19:30'
-        ]);
-        \App\Models\BaseTableContent::create([
-            'position' => 8,
-            'interval' => '19:40-21:10'
-        ]);
-
 
     }
 }
