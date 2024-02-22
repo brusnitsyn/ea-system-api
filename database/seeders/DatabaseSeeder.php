@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             BoardSeeder::class,
             RuleSeeder::class,
             UserSeeder::class,
+            TableAnotherFillSeeder::class,
         ]);
         /*
          * Типы оборудования
