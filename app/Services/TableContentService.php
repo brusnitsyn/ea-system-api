@@ -89,7 +89,8 @@ class TableContentService
         $accessor = TableContent::query()
             ->updateOrCreate([
                 'audience_id' => $audienceId,
-                'date' => $date
+                'date' => $date,
+                'base_table_content_id' => $data['base_table_content_id']
             ], $data);
 
         return TableContentResource::make($accessor);
